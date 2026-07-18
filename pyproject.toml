@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "public-tip-lab"
+version = "0.1.0"
+description = "Auditable forward test of public Reddit betting tips using paper units"
+readme = {text = "Public Tip Lab is an auditable forward-only paper experiment for public betting tips. See README.docx for the complete Windows setup and operating guide.", content-type = "text/plain"}
+requires-python = ">=3.10"
+dependencies = [
+  "streamlit>=1.59,<2",
+  "pandas>=2.2,<3",
+  "plotly>=5.24,<7",
+]
+
+[project.scripts]
+public-tip-lab = "reddit_bet_lab.cli:main"
+reddit-bet-lab = "reddit_bet_lab.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
